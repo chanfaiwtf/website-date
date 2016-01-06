@@ -1,0 +1,39 @@
+
+.index {
+  background-color: #444 !important;
+  padding-bottom: 60px;
+}
+
+.logo {
+  height: 60px;
+  margin-top: 20px;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.content-ch {
+  background-color: #ffffff !important;
+  padding: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+}
+
+.nav-ch {
+  margin: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.nav-ch-red {
+  color: #ff8080;
+  opacity: 0.8;
+}
+.nav-ch-red:hover {
+  color: #ffdddd;
+  opacity: 1;
+}
+
+.right-h4-ch {
+  color: white;
+}

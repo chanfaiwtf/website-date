@@ -1,0 +1,92 @@
+
+.login {
+  background-color: #444 !important;
+  padding-bottom: 60px;
+}
+
+.login .logo {
+  height: 60px;
+  margin-top: 40px;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.login .login-ch-content {
+  background-color: #ffffff !important;
+  padding: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+}
+
+.login .login-ch-content .input-ch-form .input-ch-box {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.login .login-ch-content .ch-nav {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 16px;
+}
+
+.login .login-ch-content .input-ch-form .input-ch-private {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.file-upload-ch {
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.file-upload-ch input.upload {
+  position: absolute;
+  top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 30px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+.btn-ch {
+  padding: 0px !important;
+  height: 30px;
+  width: 80px;
+}
+
+.span-ch {
+  padding-top: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.textarea-ch {
+  resize: none;
+}
+
+.reg-img {
+  width: 100%;
+}
+
+.reg-che {
+  width: 100%;
+  opacity: 0;
+}
+
+.reg-che-act {
+  width: 100%;
+  opacity: 1;
+}
+
+.td-ch:hover {
+  opacity: 0.4;
+}

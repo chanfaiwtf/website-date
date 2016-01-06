@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title>Finish Information</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="screen">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css" media="screen">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css" media="screen">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap-combined.min.css" media="screen">
+  <link rel="stylesheet" href="login.css" media="screen">
+  <link rel="stylesheet" href="login.css" media="screen">
+  <script type="text/javascript">
+    function showImage(f) {
+      // get path
+      var path = window.URL.createObjectURL(f.files[0]);
+      // show path
+        // document.getElementById('imgName').innerHTML = path;
+      // create img
+      var img = document.createElement('img');
+      // load img
+      img.src = path;
+      // insert img into page
+      document.getElementById('imgPrev').appendChild(img);
+    }
+  </script>
+</head>
+
+<body class="login">
+
+  <div class="row-fluid">
+    <div class="span6 offset3 logo">
+      <img src="logo.png">
+    </div>
+  <div>
+
+  <div class="row-fluid">
+    <div class="span8 offset2 login-ch-content">
+      <ul class="nav nav-tabs nav-justified">
+        <li ><a class="ch-nav">基本资料</a></li>
+        <li class="active"><a class="ch-nav">我的照片</a></li>
+        <li><a class="ch-nav">自我介绍</a></li>
+        <li><a class="ch-nav">个人喜好</a></li>
+      </ul>
+
+      <form class="form-signin input-ch-form">
+
+        <div class="form-group">
+            <div id="imgPrev" style="width:100%;"></div>
+            <br>
+            <div class="file-upload-ch btn btn-ch">
+              <span class="span-ch"> 浏览文件 </span>
+              <input class="upload" type="file" id="upload" onchange="showImage(this)">
+            </div>
+            <botton class="file-upload-ch btn btn-warning btn-ch" type="submit">
+              <span class="span-ch"> 上传头像 </span>
+            </botton>
+        </div>
+
+        <br>
+        <a href="finish-information-introduction.html" class="btn btn-large btn-primary btn-block" role="button" type="submit">
+          NEXT SELF-INTRODUCTION
+        </a>
+        <a href="finish-information-basic.html" class="btn btn-default btn-block" role="button">
+          Back Basic
+        </a>
+      </form>
+
+    </div>
+
+
+  </div>
+
+
+  <script src="bootstrap/js/npm.js"></script>
+  <script src="bootstrap/js/jquery.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="bootstrap/js/cut-photo.js"></script>
+  <!--script src="bootstrap/js/bootstrap.js"></script-->
+</body>
+</html>
