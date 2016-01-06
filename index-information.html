@@ -15,6 +15,57 @@
 </head>
 
 <body class="index">
+  <?php
+  $username=$_COOKIE['username'];
+  #echo $month;
+  $mysql_server_name='localhost'; //改成自己的mysql数据库服务器
+  $mysql_username='root'; //改成自己的mysql数据库用户名
+  $mysql_password=''; //改成自己的mysql数据库密码
+  $mysql_database='test'; //改成自己的mysql数据库名
+  $conn=mysql_connect($mysql_server_name,$mysql_username,$mysql_password) or die("error connecting") ; //连接数据库
+
+  mysql_query("set names 'utf8'"); //数据库输出编码
+
+  mysql_select_db($mysql_database); //打开数据库
+
+  $sql = "select * from user";
+  mysql_query($sql);
+  while($row= mysql_fetch_array($rs)){
+  if($row['user_name']==$username){
+  $email=$row['email'];
+  $nickname=$row['nickname'];
+  }
+  }
+
+  $sql = "select * from basic";
+  mysql_query($sql);
+  while($row= mysql_fetch_array($rs)){
+  if($row['user_name']==$username){
+  $year=$row['year'];
+  $month=$row['month'];
+  $date=$row['date'];
+  $height=$row['height'];
+  $weight=$row['weight'];
+  $sex=$row['sex'];
+  $grade=$row['grade'];
+  $major=$row['major'];
+  $phone=$row['phone'];
+  $wechat=$row['wechat'];
+  $qq=$row['qq'];
+  }
+  }
+
+  $sql = "select * from selfintroduction";
+  mysql_query($sql);
+  while($row= mysql_fetch_array($rs)){
+  if($row['user_name']==$username){
+  $introduction=$row['introduction'];
+  }
+  }
+  mysql_close(); //关闭MySQL连接
+
+  ?>
+
   <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-left">
@@ -50,14 +101,40 @@
           <div class="col-md-5">
             <img src="img/reg_01_01.png" style="width:100%; border-radius:20px;">
           </div>
-          <div class="col-md-5 col-md-offset-1">
-            <div class="col-md-6">
-              <h3 class="right-h4-ch"> 用户名： </h3>
+          <div class="col-md-5 col-md-offset-0">
+            <div class="col-md-12">
+              <div class="col-md-6">
+                <h3 class="right-h4-ch"> 用户名： </h3>
+              </div>
+              <div class="col-md-6">
+                <h3 class="right-h4-ch"> <?php echo $nickname> </h3>
+              </div>
             </div>
-            <div class="col-md-6">
-              <h3 class="right-h4-ch"> UserName </h3>
+            <div class="col-md-12">
+              <div class="col-md-6">
+                <h3 class="right-h4-ch"> 昵称： </h3>
+              </div>
+              <div class="col-md-6">
+                <h3 class="right-h4-ch"> NickName </h3>
+              </div>
             </div>
-          </div>
+            <div class="col-md-12">
+              <div class="col-md-6">
+                <h3 class="right-h4-ch"> 密码： </h3>
+              </div>
+              <div class="col-md-6">
+                <h3 class="right-h4-ch"> Password </h3>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="col-md-6">
+                <h3 class="right-h4-ch"> 邮箱： </h3>
+              </div>
+              <div class="col-md-6">
+                <h3 class="right-h4-ch"> Email </h3>
+              </div>
+            </div>
+        </div>
       </div>
 
 
