@@ -37,3 +37,13 @@
 .right-h4-ch {
   color: white;
 }
+
+.row-ch {
+  padding-bottom: 60px;
+  margin-bottom: 60px;
+}
+
+.right-na-ch {
+  color: #ff8080;
+  opacity: 0.7;
+}
