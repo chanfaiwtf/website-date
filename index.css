@@ -47,3 +47,13 @@
   color: #ff8080;
   opacity: 0.7;
 }
+
+.row-inf-ch {
+  opacity: 0.8;
+  background-color: #606060;
+  border-radius: 10px;
+}
+
+.row-inf-ch:hover {
+  background-color: #808080;
+}

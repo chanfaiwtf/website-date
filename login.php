@@ -1,5 +1,3 @@
-<html>
-<body>
 <?php
 $username = $_POST['input-username'];
 $password = $_POST['input-password'];
@@ -23,7 +21,7 @@ else{
 $is=true;
 while($row= mysql_fetch_array($rs)){
 if($row['user_name']==$username&&$row['password']==$password){
-echo "<meta http-equiv=refresh content='0;url=index.html'>";
+echo "<meta http-equiv=refresh content='0;url=index.php'>";
 #echo "success";
 mysql_close(); //关闭MySQL连接
 setcookie('username',$username);
@@ -37,7 +35,4 @@ mysql_close(); //关闭MySQL连接
 echo "<meta http-equiv=refresh content='0;url=login.html'>";
 }
 }
-$url = "finish-information-basic.html";
 ?>
-</body>
-</html>

@@ -17,13 +17,36 @@
 <body class="index">
   <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
     <div class="collapse navbar-collapse">
+      <?php
+        $username = $_COOKIE['username'];
+        if (!$username) {
+          $username = "未登录";
+
+      ?>
       <ul class="nav navbar-nav navbar-left">
-        <a class="navbar-brand" href="#" id="index-acc"> 未登录 </a>
+        <a class="navbar-brand" id="index-acc"> </a>
+        <a class="navbar-brand" id="index-acc"> <u>&nbsp<?php echo $username ?>&nbsp</u> </a>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <a class="navbar-brand" href="login.html" id="index-log"> 登陆 </a>
         <a class="navbar-brand" href="register.html" id="index-reg"> 注册 </a>
+        <a class="navbar-brand">  </a>
       </ul>
+      <?php
+        }
+        else {
+      ?>
+      <ul class="nav navbar-nav navbar-left">
+        <a class="navbar-brand" id="index-acc"> </a>
+        <a class="navbar-brand" id="index-acc"> 用户： <u>&nbsp<?php echo $username ?>&nbsp</u> </a>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <a class="navbar-brand" href="login.html" id="index-log"> 登出 </a>
+        <a class="navbar-brand">  </a>
+      </ul>
+      <?php
+        }
+      ?>
     </div>
   </nav>
 
@@ -37,11 +60,11 @@
       <nav class="navbar navbar-inverse" role="navigation">
         <div>
           <ul class="nav navbar-nav navbar-left">
-            <li class="active"><a href="index.html"><p class="nav-ch">首页</p></a></li>
+            <li class="active"><a href="index.php"><p class="nav-ch">首页</p></a></li>
             <li><a href="#"><p class="nav-ch">配对</p></a></li>
             <li><a href="index-information.php"><p class="nav-ch">个人中心</p></a></li>
-            <li><a href="#"><p class="nav-ch">修改资料</p></a></li>
-            <li><a href="index-contactus.html"><p class="nav-ch nav-ch-red">联系我们</p></a></li>
+            <li><a href="finish-information-basic.html"><p class="nav-ch">修改资料</p></a></li>
+            <li><a href="index-contactus.php"><p class="nav-ch nav-ch-red">联系我们</p></a></li>
           </ul>
         </div>
       </nav>

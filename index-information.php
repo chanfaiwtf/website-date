@@ -65,18 +65,18 @@
     }
   }
   if ($is) {
-    $year = "<h4 class='right-na-ch'> N/A </h4>";
-    $month = "<h4 class='right-na-ch'> N/A </h4>";
-    $date = "<h4 class='right-na-ch'> N/A </h4>";
-    $birth = "<h4 class='right-na-ch'> N/A </h4>";
-    $height = "<h4 class='right-na-ch'> N/A </h4>";
-    $weight = "<h4 class='right-na-ch'> N/A </h4>";
-    $sex = "<h4 class='right-na-ch'> N/A </h4>";
-    $grade = "<h4 class='right-na-ch'> N/A </h4>";
-    $major = "<h4 class='right-na-ch'> N/A </h4>";
-    $phone = "<h4 class='right-na-ch'> N/A </h4>";
-    $wechat = "<h4 class='right-na-ch'> N/A </h4>";
-    $qq = "<h4 class='right-na-ch'> N/A </h4>";
+    $year = "N/A";
+    $month = "N/A";
+    $date = "N/A";
+    $birth = "N/A";
+    $height = "N/A";
+    $weight = "N/A";
+    $sex = "N/A";
+    $grade = "N/A";
+    $major = "N/A";
+    $phone = "N/A";
+    $wechat = "N/A";
+    $qq = "N/A";
   }
 
   $sql = "select * from selfintroduction";
@@ -88,7 +88,7 @@
     }
   }
   if($is) {
-    $introduction = "<h4 class='right-na-ch'> N/A </h4>";
+    $introduction = "N/A";
   }
   mysql_close(); //关闭MySQL连接
 
@@ -99,13 +99,36 @@
 
   <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
     <div class="collapse navbar-collapse">
+      <?php
+        $username = $_COOKIE['username'];
+        if (!$username) {
+          $username = "未登录";
+
+      ?>
       <ul class="nav navbar-nav navbar-left">
-        <a class="navbar-brand" href="#" id="index-acc"> 未登录 </a>
+        <a class="navbar-brand" id="index-acc"> </a>
+        <a class="navbar-brand" id="index-acc"> <u>&nbsp<?php echo $username ?>&nbsp</u> </a>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <a class="navbar-brand" href="login.html" id="index-log"> 登陆 </a>
         <a class="navbar-brand" href="register.html" id="index-reg"> 注册 </a>
+        <a class="navbar-brand">  </a>
       </ul>
+      <?php
+        }
+        else {
+      ?>
+      <ul class="nav navbar-nav navbar-left">
+        <a class="navbar-brand" id="index-acc"> </a>
+        <a class="navbar-brand" id="index-acc"> 用户： <u>&nbsp<?php echo $username ?>&nbsp</u> </a>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <a class="navbar-brand" href="login.html" id="index-log"> 登出 </a>
+        <a class="navbar-brand">  </a>
+      </ul>
+      <?php
+        }
+      ?>
     </div>
   </nav>
 
@@ -119,11 +142,11 @@
       <nav class="navbar navbar-inverse" role="navigation">
         <div>
           <ul class="nav navbar-nav navbar-left">
-            <li><a href="index.html"><p class="nav-ch">首页</p></a></li>
+            <li><a href="index.php"><p class="nav-ch">首页</p></a></li>
             <li><a href="#"><p class="nav-ch">配对</p></a></li>
-            <li class="active"><a href="index-information.html"><p class="nav-ch">个人中心</p></a></li>
-            <li><a href="#"><p class="nav-ch">修改资料</p></a></li>
-            <li><a href="index-contactus.html"><p class="nav-ch nav-ch-red">联系我们</p></a></li>
+            <li class="active"><a href="index-information.php"><p class="nav-ch">个人中心</p></a></li>
+            <li><a href="finish-information-basic.html"><p class="nav-ch">修改资料</p></a></li>
+            <li><a href="index-contactus.php"><p class="nav-ch nav-ch-red">联系我们</p></a></li>
           </ul>
         </div>
       </nav>
@@ -133,112 +156,112 @@
           <div class="col-md-5">
             <img src="img/reg_01_01.png" style="width:100%; border-radius:20px; margin-bottom: 3px;">
             <br>
-            <div class="col-md-12">
+            <div class="col-md-12 row-inf-ch" style="margin-top:10px;">
               <div class="col-md-5">
-                <h3 class="right-h4-ch"> 电话： </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 电话： </h3>
               </div>
               <div class="col-md-6">
-                <h3 class="right-h4-ch"> <?php echo $phone ?> </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $phone ?> </h3>
               </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 row-inf-ch" style="margin-top:10px;">
               <div class="col-md-5">
-                <h3 class="right-h4-ch"> 微信： </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 微信： </h3>
               </div>
               <div class="col-md-6">
-                <h3 class="right-h4-ch"> <?php echo $wechat ?> </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $wechat ?> </h3>
               </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 row-inf-ch" style="margin-top:10px;">
               <div class="col-md-5">
-                <h3 class="right-h4-ch"> QQ： </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> QQ： </h3>
               </div>
               <div class="col-md-6">
-                <h3 class="right-h4-ch"> <?php echo $qq ?> </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $qq ?> </h3>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-md-offset-0">
-            <div class="col-md-12">
+          <div class="col-md-6" style="padding-left:4%;">
+            <div class="col-md-12 row-inf-ch" style="margin-top:10px;">
               <div class="col-md-6">
-                <h3 class="right-h4-ch"> 用户名： </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 用户名： </h3>
               </div>
               <div class="col-md-6">
-                <h3 class="right-h4-ch"> <?php echo $username ?> </h3>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="col-md-6">
-                <h3 class="right-h4-ch"> 昵称： </h3>
-              </div>
-              <div class="col-md-6">
-                <h3 class="right-h4-ch"> <?php echo $nickname ?> </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $username ?> </h3>
               </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 row-inf-ch" style="margin-top:10px;">
               <div class="col-md-6">
-                <h3 class="right-h4-ch"> 电邮： </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 昵称： </h3>
               </div>
               <div class="col-md-6">
-                <h3 class="right-h4-ch"> <?php echo $email ?> </h3>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="col-md-6">
-                <h3 class="right-h4-ch"> 性别： </h3>
-              </div>
-              <div class="col-md-6">
-                <h3 class="right-h4-ch"> <?php echo $sex ?> </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $nickname ?> </h3>
               </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 row-inf-ch" style="margin-top:10px;">
               <div class="col-md-6">
-                <h3 class="right-h4-ch"> 出生日期： </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 电邮： </h3>
               </div>
               <div class="col-md-6">
-                <h3 class="right-h4-ch"> <?php echo $birth ?> </h3>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="col-md-6">
-                <h3 class="right-h4-ch"> 身高： </h3>
-              </div>
-              <div class="col-md-6">
-                <h3 class="right-h4-ch"> <?php echo $height ?> </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $email ?> </h3>
               </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 row-inf-ch" style="margin-top:10px;">
               <div class="col-md-6">
-                <h3 class="right-h4-ch"> 体重： </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 性别： </h3>
               </div>
               <div class="col-md-6">
-                <h3 class="right-h4-ch"> <?php echo $weight ?> </h3>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="col-md-6">
-                <h3 class="right-h4-ch"> 年级： </h3>
-              </div>
-              <div class="col-md-6">
-                <h3 class="right-h4-ch"> <?php echo $grade ?> </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $sex ?> </h3>
               </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 row-inf-ch" style="margin-top:10px;">
               <div class="col-md-6">
-                <h3 class="right-h4-ch"> 专业类别： </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 出生日期： </h3>
               </div>
               <div class="col-md-6">
-                <h3 class="right-h4-ch"> <?php echo $major ?> </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $birth ?> </h3>
+              </div>
+            </div>
+            <div class="col-md-12 row-inf-ch" style="margin-top:10px;">
+              <div class="col-md-6">
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 身高： </h3>
+              </div>
+              <div class="col-md-6">
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $height ?> </h3>
+              </div>
+            </div>
+            <div class="col-md-12 row-inf-ch" style="margin-top:10px;">
+              <div class="col-md-6">
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 体重： </h3>
+              </div>
+              <div class="col-md-6">
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $weight ?> </h3>
+              </div>
+            </div>
+            <div class="col-md-12 row-inf-ch" style="margin-top:10px;">
+              <div class="col-md-6">
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 年级： </h3>
+              </div>
+              <div class="col-md-6">
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $grade ?> </h3>
+              </div>
+            </div>
+            <div class="col-md-12 row-inf-ch" style="margin-top:10px;">
+              <div class="col-md-6">
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 专业类别： </h3>
+              </div>
+              <div class="col-md-6">
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $major ?> </h3>
               </div>
             </div>
           </div>
         </div>
         <div class="col-md-10 col-md-offset-1">
           <br>
-          <h3 class="right-h4-ch"> 自我介绍：</h3>
+          <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 自我介绍：</h3>
         </div>
         <div class="col-md-8 col-md-offset-2" style="background-color:#606060; border-radius:10px;">
-          <?php echo $introduction ?>
+          <h4 class="right-h4-ch" style="padding:3px; margin:10px"> <?php echo $introduction ?> </h4>
         </div>
       </div>
 
