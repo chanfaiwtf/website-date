@@ -134,7 +134,7 @@
 
   <div class="row-fluid">
     <div class="logo">
-      <a href="index.html"><img src="logo.png"></a>
+      <a href="index.php"><img src="logo.png"></a>
     </div>
   </div>
   <div class="row-fluid">
