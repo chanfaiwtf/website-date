@@ -1,8 +1,9 @@
 <?php
+error_reporting(E_ALL ^ E_DEPRECATED);
 $db = mysql_connect('localhost','root','') or die('未能成功链接到数据库。');
 mysql_select_db('test',$db) or die(mysql_error($db));
 
-$dir = '\images';//图片保存路径
+$dir = 'D:\wamp\www\images';//图片保存路径
 
 if($_FILES['upload']['error'] != UPLOAD_ERR_OK)
 {
@@ -32,7 +33,8 @@ if($_FILES['upload']['error'] != UPLOAD_ERR_OK)
     }
 }
 
-//$image_username = $_SESSION['suohai'];
+#$image_username = $_COOKIE['username'];
+$image_username = $_POST['username'];
 $image_date = date('Y-m-D');
 
 list($width,$height,$type,$attr) = getimagesize($_FILES['upload']['tmp_name']);
@@ -46,19 +48,19 @@ switch($type)
     case IMAGETYPE_JPEG:
         $image = imagecreatefromjpeg($_FILES['upload']['tmp_name']) or die('不支持该上传文件的格式。');
         $ext = '.jpg';
-    break;
+    break;    
     case IMAGETYPE_PNG:
         $image = imagecreatefrompng($_FILES['upload']['tmp_name']) or die('不支持该上传文件的格式。');
         $ext = '.png';
-    break;
+    break;    
     default    :
         die('不支持该上传文件的格式。');
 }
 
-$query = 'insert into images(image_date) values (now())';
+$query = 'insert into images(image_username,image_date) values ("'.$image_username.'",now())';
 mysql_query($query , $db) or die(mysql_error($db));
 $last_id = mysql_insert_id();
-$imagename = $last_id;
+$imagename = $image_username.$ext;
 $query = 'update images set image_filename="'.$imagename.'" where image_id='.$last_id;
 mysql_query($query , $db) or die(mysql_error($db));
 
