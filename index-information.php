@@ -111,13 +111,13 @@
         case 1:
           $major = "文科";
           break;
-        case 1:
+        case 2:
           $major = "理科";
           break;
-        case 1:
+        case 3:
           $major = "工科";
           break;
-        case 1:
+        case 4:
           $major = "医科";
           break;
       }
@@ -313,7 +313,7 @@
           <br>
           <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 自我介绍：</h3>
         </div>
-        <div class="col-md-8 col-md-offset-2" style="background-color:#606060; border-radius:10px;">
+        <div class="col-md-8 col-md-offset-2 row-inf-ch">
           <h4 class="right-h4-ch" style="padding:3px; margin:10px"> <?php echo $introduction ?> </h4>
         </div>
       </div>

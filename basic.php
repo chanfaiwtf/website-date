@@ -10,10 +10,10 @@
   $phone = $_POST['phone'];
   $wechat = $_POST['wechat'];
   $qq = $_POST['qq'];
-  if($sex == 1) {
+  if ($sex == 1) {
     $sex = "male";
   }
-  else {
+  if ($sex == 2) {
     $sex = "famale";
   }
   $username = $_COOKIE['username'];

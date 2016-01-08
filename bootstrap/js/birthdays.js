@@ -74,7 +74,7 @@ function weights(obj, weight_top) {
 function sexs(){
     var sex = document.getElementById("sex");
     var sex_str = new Array("", "男", "女");
-    month.length = 0;
+    sex.length = 0;
     for (i = 1; i < sex_str.length; i++) {
         sex.options.add(new Option(sex_str[i], i));
     }

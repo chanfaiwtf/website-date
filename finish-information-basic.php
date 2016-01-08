@@ -88,7 +88,7 @@
         <br>
         <div class="form-group">
           <h4>性别:</h4>
-          <select class="from-control" name="sex" id="sex" style="width:150px;" onfocus="sexs()"></select>
+          <select class="form-control" name="sex" id="sex" style="width:150px;" onfocus="sexs()"></select>
         </div>
         <br>
         <div class="form-group">
