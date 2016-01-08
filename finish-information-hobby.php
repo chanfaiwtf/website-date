@@ -623,13 +623,11 @@
           </tbody>
         </table>
 
-        <br>
-        <a href="index.html" class="btn btn-large btn-primary btn-block" role="button" type="submit">
-          SUBMIT
-        </a>
-        <a href="finish-information-introduction.html" class="btn btn-default btn-block" role="button">
-          Back Self-Introduction
-        </a>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-large btn-block">
+            保存
+          </button>
+        </div>
       </form>
 
     </div>

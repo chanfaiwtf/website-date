@@ -82,22 +82,15 @@
         <div class="form-group">
             <div id="imgPrev" style="width:100%;"></div>
             <br>
-            <div class="file-upload-ch btn btn-ch">
+            <div class="file-upload-ch btn btn-ch btn-warning">
               <span class="span-ch"> 浏览文件 </span>
               <input class="upload" type="file" id="browser" onchange="showImage(this)">
             </div>
-            <botton class="file-upload-ch btn btn-warning btn-ch" id="upload" type="submit">
-              <span class="span-ch"> 上传头像 </span>
+            <br><br>
+            <botton class="btn btn-primary btn-large btn-block" id="upload" type="submit">
+              保存
             </botton>
         </div>
-
-        <br>
-        <a href="finish-information-introduction.html" class="btn btn-large btn-primary btn-block" role="button" type="submit">
-          NEXT SELF-INTRODUCTION
-        </a>
-        <a href="finish-information-basic.html" class="btn btn-default btn-block" role="button">
-          Back Basic
-        </a>
       </form>
 
     </div>

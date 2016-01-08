@@ -1,5 +1,4 @@
-<html>
-<body>
+
 <?php
 $introduction=$_POST['selfintroduction'];
 $username=$_COOKIE['username'];
@@ -18,6 +17,4 @@ mysql_query($sql);
 
 mysql_close(); //关闭MySQL连接
 ?>
-<meta http-equiv="refresh" content="0;url=finish-information-introduction.html">
-</body>
-</html>
+<meta http-equiv="refresh" content="0;url=index-information.php">

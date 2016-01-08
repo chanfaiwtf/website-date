@@ -67,22 +67,16 @@
 
         <div class="form-group">
           <label class="control-label" for="intro"><h4>自我介绍:</h4></label>
-          <textarea class="form-control textarea-ch" rows="3"> </textarea>
+          <textarea class="form-control textarea-ch" name="selfintroduction" rows="3"> </textarea>
         </div>
 
         <div class="form-group">
-          <button type="submit" class="btn btn-warning">
+          <button type="submit" class="btn btn-primary btn-large btn-block">
             保存
           </button>
         </div>
 
         <br>
-        <a href="finish-information-hobby.html" class="btn btn-large btn-primary btn-block" role="button" type="submit">
-          NEXT HOBBY
-        </a>
-        <a href="finish-information-photo.html" class="btn btn-default btn-block" role="button">
-          Back Photo
-        </a>
       </form>
 
     </div>

@@ -136,6 +136,7 @@
   while ($row = mysql_fetch_array($rs)) {
     if ($row['user_name'] == $username) {
       $introduction = $row['introduction'];
+      if ($introduction == "") $introduction = "N/A";
       $is = false;
     }
   }
