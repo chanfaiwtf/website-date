@@ -15,20 +15,18 @@
 </head>
 
 <body class="login">
-
   <div class="row-fluid">
     <div class="span6 offset3 logo">
       <a href="index.php"><img src="logo.png"></a>
     </div>
   <div>
-
   <div class="row-fluid">
     <div class="span8 offset2 login-ch-content">
       <ul class="nav nav-tabs nav-justified">
-        <li class="active"><a class="ch-nav">基本资料</a></li>
-        <li><a class="ch-nav">我的照片</a></li>
-        <li><a class="ch-nav">自我介绍</a></li>
-        <li><a class="ch-nav">个人喜好</a></li>
+        <li class="active"><a href="finish-information-basic.php" class="ch-nav">基本资料</a></li>
+        <li><a href="finish-information-photo.html" class="ch-nav">我的照片</a></li>
+        <li><a href="finish-information-introduction.html" class="ch-nav">自我介绍</a></li>
+        <li><a href="finish-information-hobby.html" class="ch-nav">个人喜好</a></li>
       </ul>
 
       <form class="form-inline input-ch-form1" action="basic.php" method="post">
@@ -68,7 +66,7 @@
           <select class="form-control" name="major" id="major" style="width:150px;" onfocus="majors()">
           </select>
         </div>
-
+        <br>
         <div class="form-group">
           <h3 style="color:#ffe9be;">以下资料将不会公开</h3>
           <label class="control-label" for="phone"><h4>电话:</h4></label>
@@ -81,20 +79,10 @@
           <input class="input-block-level input-ch-private" type="text" name="qq" id="qq" placeholder="QQ">
 
         </div>
-        <br><br>
-        <div class="form-group">
-          <button type="submit" class="btn btn-warning">
+        <br><br><br>
+          <button type="submit" class="btn btn-primary btn-large btn-block">
             保存
           </button>
-        </div>
-
-        <br><br><br>
-        <a href="finish-information-photo.html" class="btn btn-large btn-primary btn-block" role="button" type="submit">
-          NEXT PHOTO
-        </a>
-        <a href="register.html" class="btn btn-default btn-block" role="button">
-          Back
-        </a>
       </form>
 
     </div>

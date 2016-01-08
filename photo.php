@@ -1,5 +1,4 @@
-<html>
-<body>
+
 <?php
 $upload=$_POST['upload'];
 $username=$_COOKIE['username'];
@@ -20,6 +19,3 @@ mysql_close(); //关闭MySQL连接
 $url = "finish-information-basic.html";
 #<meta http-equiv="refresh" content="10;url=finish-information-photo.html">
 ?>
-
-</body>
-</html>

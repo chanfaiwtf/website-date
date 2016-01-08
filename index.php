@@ -63,7 +63,7 @@
             <li class="active"><a href="index.php"><p class="nav-ch">首页</p></a></li>
             <li><a href="#"><p class="nav-ch">配对</p></a></li>
             <li><a href="index-information.php"><p class="nav-ch">个人中心</p></a></li>
-            <li><a href="finish-information-basic.html"><p class="nav-ch">修改资料</p></a></li>
+            <li><a href="finish-information-basic.php"><p class="nav-ch">修改资料</p></a></li>
             <li><a href="index-contactus.php"><p class="nav-ch nav-ch-red">联系我们</p></a></li>
           </ul>
         </div>

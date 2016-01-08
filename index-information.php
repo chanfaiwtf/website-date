@@ -22,7 +22,7 @@
   $mysql_username = 'root'; //改成自己的mysql数据库用户名
   $mysql_password = ''; //改成自己的mysql数据库密码
   $mysql_database = 'test'; //改成自己的mysql数据库名
-  $conn=mysql_connect($mysql_server_name, $mysql_username, $mysql_password) or die("error connecting") ; //连接数据库
+  $conn=mysql_connect($mysql_server_name, $mysql_username, $mysql_password) or die("error connecting"); //连接数据库
 
   mysql_query("set names 'utf8'"); //数据库输出编码
 
@@ -52,42 +52,94 @@
       $year = $row['year'];
       $month = $row['month'];
       $date = $row['date'];
-      $birth = $year." ".$month." ".$day;
+      if ($year == "" || $month == "" || $date == "") $birth = "N/A";
+      else $birth = $year."/".$month."/".$date;
       $height = $row['height'];
+      if ($height == "") $height = "N/A";
       $weight = $row['weight'];
+      if ($weight == "") $weight = "N/A";
       $sex = $row['sex'];
+      switch ($sex) {
+        case "":
+          $sex = "N/A";
+          break;
+        case "male":
+          $sex = "男";
+          break;
+        case "famale":
+          $sex = "女";
+          break;
+      }
       $grade = $row['grade'];
+      switch ($grade) {
+        case "":
+          $grade = "N/A";
+          break;
+        case 1:
+          $grade = "本科大一";
+          break;
+        case 2:
+          $grade = "本科大二";
+          break;
+        case 3:
+          $grade = "本科大三";
+          break;
+        case 4:
+          $grade = "本科大四";
+          break;
+        case 5:
+          $grade = "本科毕业";
+          break;
+        case 6:
+          $grade = "硕士研究生";
+          break;
+        case 7:
+          $grade = "硕士毕业";
+          break;
+        case 8:
+          $grade = "博士研究生";
+          break;
+        case 9:
+          $grade = "博士毕业";
+          break;
+      }
       $major = $row['major'];
+      switch ($major) {
+        case "":
+          $major = "N/A";
+          break;
+        case 1:
+          $major = "文科";
+          break;
+        case 1:
+          $major = "理科";
+          break;
+        case 1:
+          $major = "工科";
+          break;
+        case 1:
+          $major = "医科";
+          break;
+      }
       $phone = $row['phone'];
+      if ($phone == "") $phone = "N/A";
       $wechat = $row['wechat'];
+      if ($wechat == "") $wechat = "N/A";
       $qq = $row['qq'];
+      if ($qq == "") $qq = "N/A";
+      $is = false;
+    }
+  }
+  $sql = "select * from selfintroduction";
+  $rs = mysql_query($sql);
+  $is = true;
+  while ($row = mysql_fetch_array($rs)) {
+    if ($row['user_name'] == $username) {
+      $introduction = $row['introduction'];
       $is = false;
     }
   }
   if ($is) {
-    $year = "N/A";
-    $month = "N/A";
-    $date = "N/A";
-    $birth = "N/A";
-    $height = "N/A";
-    $weight = "N/A";
-    $sex = "N/A";
-    $grade = "N/A";
-    $major = "N/A";
-    $phone = "N/A";
-    $wechat = "N/A";
-    $qq = "N/A";
-  }
-
-  $sql = "select * from selfintroduction";
-  $rs = mysql_query($sql);
-  while ($row = mysql_fetch_array($rs)) {
-    if($row['user_name']==$username) {
-      $introduction=$row['introduction'];
-      $is=false;
-    }
-  }
-  if($is) {
     $introduction = "N/A";
   }
   mysql_close(); //关闭MySQL连接
@@ -145,7 +197,7 @@
             <li><a href="index.php"><p class="nav-ch">首页</p></a></li>
             <li><a href="#"><p class="nav-ch">配对</p></a></li>
             <li class="active"><a href="index-information.php"><p class="nav-ch">个人中心</p></a></li>
-            <li><a href="finish-information-basic.html"><p class="nav-ch">修改资料</p></a></li>
+            <li><a href="finish-information-basic.php"><p class="nav-ch">修改资料</p></a></li>
             <li><a href="index-contactus.php"><p class="nav-ch nav-ch-red">联系我们</p></a></li>
           </ul>
         </div>
@@ -227,7 +279,7 @@
                 <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 身高： </h3>
               </div>
               <div class="col-md-6">
-                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $height ?> </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $height ?> cm </h3>
               </div>
             </div>
             <div class="col-md-12 row-inf-ch" style="margin-top:10px;">
@@ -235,7 +287,7 @@
                 <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 体重： </h3>
               </div>
               <div class="col-md-6">
-                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $weight ?> </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $weight ?> kg </h3>
               </div>
             </div>
             <div class="col-md-12 row-inf-ch" style="margin-top:10px;">
