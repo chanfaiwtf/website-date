@@ -3,7 +3,7 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 $db = mysql_connect('localhost','root','') or die('未能成功链接到数据库。');
 mysql_select_db('test',$db) or die(mysql_error($db));
 
-$dir = 'D:\wamp\www\images';//图片保存路径
+$dir = '/user-img';//图片保存路径
 
 if($_FILES['upload']['error'] != UPLOAD_ERR_OK)
 {
@@ -33,8 +33,8 @@ if($_FILES['upload']['error'] != UPLOAD_ERR_OK)
     }
 }
 
-#$image_username = $_COOKIE['username'];
-$image_username = $_POST['username'];
+$image_username = $_COOKIE['username'];
+#$image_username = $_POST['shuibi'];
 $image_date = date('Y-m-D');
 
 list($width,$height,$type,$attr) = getimagesize($_FILES['upload']['tmp_name']);
@@ -48,11 +48,11 @@ switch($type)
     case IMAGETYPE_JPEG:
         $image = imagecreatefromjpeg($_FILES['upload']['tmp_name']) or die('不支持该上传文件的格式。');
         $ext = '.jpg';
-    break;    
+    break;
     case IMAGETYPE_PNG:
         $image = imagecreatefrompng($_FILES['upload']['tmp_name']) or die('不支持该上传文件的格式。');
         $ext = '.png';
-    break;    
+    break;
     default    :
         die('不支持该上传文件的格式。');
 }
@@ -79,3 +79,5 @@ switch($type)
 
 imagedestroy($image);
 ?>
+
+<meta http-equiv = "refresh" content = "0;url = index-information.php">

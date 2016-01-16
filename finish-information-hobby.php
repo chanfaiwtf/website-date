@@ -84,7 +84,7 @@
         <li class="active"><a href="finish-information-hobby.php" class="ch-nav">个人喜好</a></li>
       </ul>
 
-      <form class="form-signin">
+      <form class="form-signin" action="get_hobby.php" method="post" enctype="multipart/form-data">
 
 
         <table class="table">

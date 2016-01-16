@@ -77,19 +77,16 @@
         <li><a href="finish-information-hobby.php" class="ch-nav">个人喜好</a></li>
       </ul>
 
-      <form class="form-signin input-ch-form" action="get-image.php" method="post">
-
+      <form class="form-signin input-ch-form" action="get-image.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <div id="imgPrev" style="width:100%;"></div>
-            <br>
-            <div class="file-upload-ch btn btn-ch btn-warning">
-              <span class="span-ch"> 浏览文件 </span>
-              <input class="upload" type="file" id="browser" onchange="showImage(this)">
-            </div>
-            <br><br>
-            <botton class="btn btn-primary btn-large btn-block" id="upload" type="submit">
-              保存
-            </botton>
+          <div id="imgPrev" style="width:100%;"></div>
+          <br>
+          <div class="file-upload-ch btn btn-ch btn-warning">
+            <span class="span-ch"> 浏览文件 </span>
+            <input type="file" name="upload" class="upload" onchange="showImage(this)">
+          </div>
+          <br><br>
+          <input class="btn btn-primary btn-large btn-block" name="submit" type="submit">
         </div>
       </form>
 
