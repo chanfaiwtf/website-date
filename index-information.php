@@ -280,7 +280,7 @@
                 <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 身高： </h3>
               </div>
               <div class="col-md-6">
-                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $height ?> cm </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $height ?> </h3>
               </div>
             </div>
             <div class="col-md-12 row-inf-ch" style="margin-top:10px;">
@@ -288,7 +288,7 @@
                 <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 体重： </h3>
               </div>
               <div class="col-md-6">
-                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $weight ?> kg </h3>
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $weight ?> </h3>
               </div>
             </div>
             <div class="col-md-12 row-inf-ch" style="margin-top:10px;">

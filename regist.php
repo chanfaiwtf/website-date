@@ -12,11 +12,15 @@ $conn=mysql_connect($mysql_server_name,$mysql_username,$mysql_password) or die("
 mysql_query("set names 'utf8'"); //数据库输出编码
 
 mysql_select_db($mysql_database); //打开数据库
+$sql = "insert into basic (user_name,year,month,date,height,weight,sex,grade,major,phone,wechat,qq,hobby_lifestyle,hobby_sports,hobby_entertain,hobby_eat) values ('$username','','','','','','','','','','','','','','','')";
+mysql_query($sql);
 $sql = "insert into user (user_name,password,email,nickname) values ('$username','$password','$email','$nickname')";
+mysql_query($sql);
+$sql = "insert into selfintroduction (user_name,introduction) values ('$username','')";
 mysql_query($sql);
 
 mysql_close(); //关闭MySQL连接
 setcookie('username',$username);
 $url = "finish-information-basic.html";
 ?>
-<meta http-equiv="refresh" content="0;url=index.html">
+<meta http-equiv="refresh" content="0;url=index.php">
