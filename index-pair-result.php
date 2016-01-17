@@ -15,10 +15,72 @@
 </head>
 
 <body class="index">
+  <?php
+    $username = $_COOKIE['username'];
+    $mysql_server_name = 'localhost'; //改成自己的mysql数据库服务器
+    $mysql_username = 'root'; //改成自己的mysql数据库用户名
+    $mysql_password = ''; //改成自己的mysql数据库密码
+    $mysql_database = 'test'; //改成自己的mysql数据库名
+    $conn=mysql_connect($mysql_server_name, $mysql_username, $mysql_password) or die("error connecting"); //连接数据库
+    mysql_query("set names 'utf8'"); //数据库输出编码
+    mysql_select_db($mysql_database); //打开数据库
+
+    $sql = "select * from result";
+    $rs=mysql_query($sql);
+    $is = true;
+    while ($row = mysql_fetch_array($rs)) {
+      if ($row['username'] == $username) {
+        $pair1 = $row['pair1'];
+        $is = false;
+      }
+    }
+    if ($is) {
+      echo "no information, return login in 5s";
+      echo "<meta http-equiv=refresh content='0; url=finish-information-basic.php'>";
+    }
+
+    $sql = "select * from images";
+    $rs = mysql_query($sql);
+    $is = true;
+    while ($row = mysql_fetch_array($rs)) {
+      if ($row['image_username'] == $pair1) {
+        $img_path = "user-img/".$row['image_filename'];
+        $is = false;
+      }
+    }
+    if ($is) {
+      $img_path = "user-img/default.jpg";
+    }
+
+    $sql = "select * from user";
+    $rs = mysql_query($sql);
+    while ($row = mysql_fetch_array($rs)) {
+      if ($row['user_name'] == $pair1) {
+        $nickname = $row['nickname'];
+        $email = $row['email'];
+      }
+    }
+
+    $sql = "select * from basic";
+    $rs = mysql_query($sql);
+    while ($row = mysql_fetch_array($rs)) {
+      if ($row['user_name'] == $pair1) {
+        $phone = $row['phone'];
+        $wechat = $row['wechat'];
+        $qq = $row['qq'];
+      }
+    }
+
+    if ($email == "") $email = "N/A";
+    if ($phone == "") $phone = "N/A";
+    if ($wechat == "") $wechat = "N/A";
+    if ($qq == "") $qq = "N/A";
+
+    mysql_close(); //关闭MySQL连接
+  ?>
   <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
     <div class="collapse navbar-collapse">
       <?php
-        $username = $_COOKIE['username'];
         if (!$username) {
           $username = "未登录";
 
@@ -69,7 +131,54 @@
         </div>
       </nav>
 
-
+      <div class="row">
+        <h3 style="padding-left:80px; padding-bottom:20px; color:white; opacity:0.9;">配对结果:</h3>
+          <div class="col-md-10 col-md-offset-1 row-inf-ch">
+            <div class="col-md-4" style="padding:20px; padding-left:10px;">
+              <?php
+                $iimg = "<img src='$img_path' style='width:100%; border-radius:20px; margin-bottom: 3px;'>";
+                echo $iimg;
+              ?>
+            </div>
+            <div class="col-md-8" style="padding:20px;">
+              <div class="col-md-4">
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 昵称： </h3>
+              </div>
+              <div class="col-md-8">
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $nickname ?> </h3>
+              </div>
+              <br>
+              <div class="col-md-4">
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 电邮： </h3>
+              </div>
+              <div class="col-md-8">
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $email ?> </h3>
+              </div>
+              <br>
+              <div class="col-md-4">
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 电话： </h3>
+              </div>
+              <div class="col-md-8">
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $phone ?> </h3>
+              </div>
+              <br>
+              <div class="col-md-4">
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> 微信： </h3>
+              </div>
+              <div class="col-md-8">
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $wechat ?> </h3>
+              </div>
+              <br>
+              <div class="col-md-4">
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> QQ： </h3>
+              </div>
+              <div class="col-md-8">
+                <h3 class="right-h4-ch" style="padding:3px; padding-bottom:0px; margin:10px"> <?php echo $qq ?> </h3>
+              </div>
+              <br>
+            </div>
+          </div>
+      </div>
 
     </div>
   </div>

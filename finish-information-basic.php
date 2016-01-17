@@ -103,7 +103,6 @@
         </div>
         <br>
         <div class="form-group">
-          <h3 style="color:#ffe9be;">以下资料将不会公开</h3>
           <label class="control-label" for="phone"><h4>电话:</h4></label>
           <input class="input-block-level input-ch-private" type="text" name="phone" id="phone" placeholder="PhoneNumber">
 
