@@ -19,7 +19,7 @@
 	$rs2 = mysql_query($query2 , $db);
 	$myfile = fopen("testfile.txt","w") or die("Unable to open file!");
 	while($row2 = mysql_fetch_array($rs2)){
-		$txt = $row2['username'];
+		$txt = $row2['user_name'];
 		fwrite($myfile,$row1['username']." ");
 		if($row2['sex']=="Male"){
 			fwrite($myfile,"Female"." ");
