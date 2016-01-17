@@ -116,10 +116,12 @@ int main(int argc,char *argv[]){
 	sort(arr,arr+no,cmp);
 	//cout<<"排序后的相似性及用户ID如下："<<endl;
 	//ofstream outfile("rs.txt");
+	int c=0;
     for(int i=0;i<no;++i){
-        cout<<arr[i].userid<<" ";
+        if(c>10) break;
+        cout<<arr[i].userid<<endl;
+        c++;
     }
-    cout<<endl;
     //outfile.close();
 	return 0;
 }

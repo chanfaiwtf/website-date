@@ -71,7 +71,7 @@
       </nav>
 
       <div class="row-fluid">
-        <div class="col-md-8">
+        <div class="col-md-8 col-md-offset-2">
           <div id="myCarousel" class="carousel slide" style="">
              <!-- 轮播（Carousel）指标 -->
              <ol class="carousel-indicators carousel-control">
@@ -97,12 +97,6 @@
       </div>
 
 
-      <div class="col-md-4">
-        <h4 class="right-h4-ch">1.</h4>
-        <h4 class="right-h4-ch">2.</h4>
-        <h4 class="right-h4-ch">3.</h4>
-        <h4 class="right-h4-ch">4.</h4>
-      </div>
 
 
     </div>

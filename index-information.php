@@ -44,6 +44,19 @@
     echo "<meta http-equiv=refresh content='0; url=login.html'>";
   }
 
+  $sql = "select * from images";
+  $rs = mysql_query($sql);
+  $is = true;
+  while ($row = mysql_fetch_array($rs)) {
+    if ($row['image_username'] == $username) {
+      $img_path = "user-img/".$row['image_filename'];
+      $is = false;
+    }
+  }
+  if ($is) {
+    $img_path = "/user-img/default.jpg";
+  }
+
   $sql = "select * from basic";
   $rs = mysql_query($sql);
   $is = true;
@@ -207,7 +220,11 @@
       <div class="row row-ch">
         <div class="col-md-12">
           <div class="col-md-5">
-            <img src="img/reg_01_01.png" style="width:100%; border-radius:20px; margin-bottom: 3px;">
+
+            <?php
+              $iimg = "<img src='$img_path' style='width:100%; border-radius:20px; margin-bottom: 3px;'>";
+              echo $iimg;
+            ?>
             <br>
             <div class="col-md-12 row-inf-ch" style="margin-top:10px;">
               <div class="col-md-5">

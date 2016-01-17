@@ -18,6 +18,8 @@ $sql = "insert into user (user_name,password,email,nickname) values ('$username'
 mysql_query($sql);
 $sql = "insert into selfintroduction (user_name,introduction) values ('$username','')";
 mysql_query($sql);
+$sql = "insert into result (username,pair1) values ('$username','')";
+mysql_query($sql);
 
 mysql_close(); //关闭MySQL连接
 setcookie('username',$username);
