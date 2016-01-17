@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <title>Index</title>
-
+  <title>Index-Pair</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,12 +56,12 @@
     </div>
   </div>
   <div class="row-fluid">
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-md-10 col-md-offset-1 row-ch">
       <nav class="navbar navbar-inverse" role="navigation">
         <div>
           <ul class="nav navbar-nav navbar-left">
-            <li class="active"><a href="index.php"><p class="nav-ch">首页</p></a></li>
-            <li><a href="index-pair.php"><p class="nav-ch">配对</p></a></li>
+            <li><a href="index.php"><p class="nav-ch">首页</p></a></li>
+            <li class="active"><a href="index-pair.php"><p class="nav-ch">配对</p></a></li>
             <li><a href="index-information.php"><p class="nav-ch">个人中心</p></a></li>
             <li><a href="finish-information-basic.php"><p class="nav-ch">修改资料</p></a></li>
             <li><a href="index-contactus.php"><p class="nav-ch nav-ch-red">联系我们</p></a></li>
@@ -70,39 +69,13 @@
         </div>
       </nav>
 
-      <div class="row-fluid">
-        <div class="col-md-8">
-          <div id="myCarousel" class="carousel slide" style="">
-             <!-- 轮播（Carousel）指标 -->
-             <ol class="carousel-indicators carousel-control">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-             </ol>
-             <!-- 轮播（Carousel）项目 -->
-             <div class="carousel-inner">
-                <div class="item active" style="background-size:cover;">
-                   <img src="img01.jpg" alt="">
-                   <div class="carousel-caption"><h3>img01</h3></div>
-                </div>
-                <div class="item" style="background-size:cover;">
-                   <img src="img01.jpg" alt="">
-                   <div class="carousel-caption"><h3>img02</h3></div>
-                </div>
-             </div>
-             <!-- 轮播（Carousel）导航 -->
-             <a class="carousel-control left" href="#myCarousel" data-slide="prev" style="">&lsaquo;</a>
-             <a class="carousel-control right" href="#myCarousel" data-slide="next" style="">&rsaquo;</a>
-          </div>
+      <form class="form-signin" action="pipei.php" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-large btn-block">
+            <h4>GO!</h4>
+          </button>
         </div>
-      </div>
-
-
-      <div class="col-md-4">
-        <h4 class="right-h4-ch">1.</h4>
-        <h4 class="right-h4-ch">2.</h4>
-        <h4 class="right-h4-ch">3.</h4>
-        <h4 class="right-h4-ch">4.</h4>
-      </div>
+      </form>
 
 
     </div>
