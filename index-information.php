@@ -54,7 +54,7 @@
     }
   }
   if ($is) {
-    $img_path = "/user-img/default.jpg";
+    $img_path = "user-img/default.jpg";
   }
 
   $sql = "select * from basic";
@@ -76,10 +76,10 @@
         case "":
           $sex = "N/A";
           break;
-        case "male":
+        case "Male":
           $sex = "男";
           break;
-        case "famale":
+        case "Female":
           $sex = "女";
           break;
       }

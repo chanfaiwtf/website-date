@@ -71,7 +71,7 @@
       </nav>
 
       <div class="row-fluid">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
           <div id="myCarousel" class="carousel slide" style="">
              <!-- 轮播（Carousel）指标 -->
              <ol class="carousel-indicators carousel-control">
@@ -82,11 +82,11 @@
              <div class="carousel-inner">
                 <div class="item active" style="background-size:cover;">
                    <img src="img01.jpg" alt="">
-                   <div class="carousel-caption"><h3>img01</h3></div>
+                   <div class="carousel-caption"><h3></h3></div>
                 </div>
                 <div class="item" style="background-size:cover;">
-                   <img src="img01.jpg" alt="">
-                   <div class="carousel-caption"><h3>img02</h3></div>
+                   <img src="img02.jpg" alt="">
+                   <div class="carousel-caption"><h3></h3></div>
                 </div>
              </div>
              <!-- 轮播（Carousel）导航 -->

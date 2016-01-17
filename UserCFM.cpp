@@ -25,12 +25,13 @@ bool cmp (SR s1,SR s2){
 
 double fenzi(vector<string> a,int b,int c){
 	double s1=0;
-	for(int i=4;i<sizeof(a)-1;i++){
+	for(int i=4;i<8;i++){
 		if(quserinfor[i]=="0"||a[i]=="0") continue;
 		else{
             s1+=atoi(quserinfor[i].c_str())*atoi(a[i].c_str());
         }
 	}
+
 	//cout<<"分子："<<s1<<endl;
 	return s1;
 }
@@ -38,7 +39,8 @@ double fenzi(vector<string> a,int b,int c){
 double fenmu(vector<string> a,int b,int c)
 {
 	double s2=0,s3=0;
-	for(int i=4;i<sizeof(a)-1;i++){
+	//cout<<"fuck"<<endl;
+	for(int i=4;i<8;i++){
 		if(quserinfor[i]=="0"||a[i]=="0")
 			continue;
 		else{
@@ -46,6 +48,7 @@ double fenmu(vector<string> a,int b,int c)
             s3+=atoi(a[i].c_str())*atoi(a[i].c_str());
 		}
 	}
+	//cout<<"fuck"<<endl;
 	//cout<<"分母："<<sqrt(s2)*sqrt(s3)<<endl;
 	return sqrt(s2)*sqrt(s3);
 }
@@ -60,14 +63,15 @@ int main(int argc,char *argv[]){
     }
     string QUserId=argv[1];
     string SexPref=argv[2];
-    //string QUserId="112233";
+    //string QUserId="qianfei";
     //string SexPref="Male";
 	string FileName;
 	char name[30];
 	fstream InFile;
 	string line;
 	int numofline=0;
-	FileName = string("C:\\Users\\Administrator\\Desktop\\UserInfor.txt");//路径示例
+	FileName = string("testfile.txt");//路径示例
+	//cout<<"fuck"<<endl;
 	InFile.open(FileName.c_str(),ios::in);
 	if(InFile.is_open()){
         while(getline(InFile,line)){
@@ -84,6 +88,7 @@ int main(int argc,char *argv[]){
 	}
 	}
 	InFile.close();
+	//cout<<"fuck"<<endl;
 //    for(int i=0;i<11;i++){
 //        cout<<infor[1][i]<<' ';
 //    }
@@ -103,6 +108,7 @@ int main(int argc,char *argv[]){
             }
         }
     }
+    //cout<<"fuck"<<endl;
 	double s=0,ss=0;
 	int no=0;
 	for(int i=0,j=0;i<numofline;i++){
@@ -113,15 +119,11 @@ int main(int argc,char *argv[]){
             ++j;
 		}
 	}
+	//cout<<"fuck"<<endl;
 	sort(arr,arr+no,cmp);
 	//cout<<"排序后的相似性及用户ID如下："<<endl;
 	//ofstream outfile("rs.txt");
-	int c=0;
-    for(int i=0;i<no;++i){
-        if(c>10) break;
-        cout<<arr[i].userid<<endl;
-        c++;
-    }
+    cout<<arr[0].userid<<endl;
     //outfile.close();
 	return 0;
 }

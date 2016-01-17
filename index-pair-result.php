@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <title>Index-Pair</title>
+  <title>Index-Pair-Result</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,14 +69,6 @@
         </div>
       </nav>
 
-      <form class="form-signin" action="pipei.php" method="post" enctype="multipart/form-data">
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-large btn-block">
-            <h4 style="color:red; opacity:0.9;">请先完善资料！</h4>
-            <h4>GO!</h4>
-          </button>
-        </div>
-      </form>
 
 
     </div>
